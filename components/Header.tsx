@@ -10,7 +10,7 @@ function Header() {
             <h2 className='text-[25px] font-semibold tracking-widest
             text-red-500'>DISCOVER</h2>
         </div>
-            <ul className='flex gap-8'>
+            <ul className=' gap-8 hidden sm:flex'>
                 <li className='text-[18px] hover:text-red-500 cursor-pointer'>Home</li>
                 <li className='text-[18px] hover:text-red-500 cursor-pointer'>About Us</li>
                 <li className='text-[18px] hover:text-red-500 cursor-pointer'>Contact Us</li>
