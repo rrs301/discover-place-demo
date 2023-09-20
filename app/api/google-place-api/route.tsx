@@ -13,7 +13,7 @@ export async function GET(request:any){
       },
     }
     );
-    const product = await res.json();
+    const resp = await res.json();
 
-    return NextResponse.json({ product });
+    return NextResponse.json({ resp });
 }

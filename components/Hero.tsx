@@ -8,7 +8,7 @@ function Hero() {
       <div>
         <Image src="/bg.png" alt="bg"
           width={800} height={200}
-          className='bg-blend-soft-light w-full absolute mt-[-50px]' />
+          className='bg-blend-soft-light w-full absolute mt-[-100px]' />
         <div className='mt-[70px]'>
           <h2 className='text-[55px] 
               text-red-600 tracking-widest

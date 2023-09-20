@@ -2,9 +2,11 @@
 import Hero from '@/components/Hero'
 import PlaceList from '@/components/PlaceList'
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+
+  const [placeList,setPlaceList]=useState([]);
   useEffect(()=>{
     getPlacesList(); 
   },[])
@@ -12,12 +14,13 @@ export default function Home() {
   const getPlacesList=async()=>{
     const result=await fetch("/api/google-place-api");
     const data=await result.json();
-    console.log(data)
+    console.log(data.resp.results);
+    setPlaceList(data.resp.results);
   }
   return (
     <div>
       <Hero/>
-      <PlaceList/>
+    {placeList?  <PlaceList placeList={placeList}/>:null}
     </div>
   )
 }
