@@ -21,10 +21,12 @@ function Hero() {
             <button className='bg-red-600 rounded-full p-3 
                 shadow-md z-10 cursor-pointer hover:scale-105'>
               <svg xmlns="http://www.w3.org/2000/svg"
-                fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                 stroke="currentColor"
                 className="w-6 h-6 text-white">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                <path strokeLinecap="round" 
+                strokeLinejoin="round" 
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
               </svg>
 
             </button>
@@ -33,7 +35,7 @@ function Hero() {
             <h2>Or Browser the category</h2>
             <div className='grid grid-cols-3 md:grid-cols-7 justify-center gap-5 mt-3 w-[50%]'>
             {category.map((item:any,index:number)=>(
-              <div className='border-[1px]  z-10 rounded-full  w-[60px]
+              <div key={index} className='border-[1px]  z-10 rounded-full  w-[60px]
               p-4 bg-white hover:border-red-500 hover:scale-110 transition-all cursor-pointer shadow-sm'>
                 <Image src={item.icon} alt={item.name}
                 width={30} height={30}/>
