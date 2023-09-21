@@ -23,7 +23,9 @@ function PlaceList({ placeList }: any) {
                 ))}
             </div>
            {selectedPlace?.name? <div className='fixed top-0 right-0 z-20'>
-                <SideDrawer closeDrawer={()=>setSelectedPlace([])}/>
+                <SideDrawer
+                place={selectedPlace}
+                closeDrawer={()=>setSelectedPlace([])}/>
             </div>:null}
         </div>
     )
