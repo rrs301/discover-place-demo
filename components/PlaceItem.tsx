@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 
+const BASE_PHOTO_URL="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400"
 function PlaceItem({ place }: any) {
     return (
         <div className='w-full z-10 border-[1px] rounded-xl shadow-md'>
-            <Image src="/placeholder.jpeg" alt='placeholder'
-                width={200} height={80} className='w-full' />
+            <Image 
+            src={BASE_PHOTO_URL+"&photo_reference="+place?.photos[0]?.photo_reference+"&key="+process.env.NEXT_PUBLIC_GOOGLE_API_KEY} alt='placeholder'
+                width={200} height={80} className='w-full rounded-t-xl h-[150px]  object-fill' />
             <div className='p-2'>
                 <h2 className='line-clamp-2'>{place.name}</h2>
                 <div className='flex gap-2 mt-3'>
